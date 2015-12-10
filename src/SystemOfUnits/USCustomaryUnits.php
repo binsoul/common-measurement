@@ -17,7 +17,6 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $ACRE                unit of area
  * @property Unit $BARREL              unit of volume
  * @property Unit $BUSHEL              unit of volume
- * @property Unit $CHAIN               unit of length
  * @property Unit $CORD                unit of volume
  * @property Unit $CUP                 unit of volume
  * @property Unit $DRY_PINT            unit of volume
@@ -26,17 +25,14 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $FLUID_DRAM          unit of volume
  * @property Unit $FLUID_OUNCE         unit of volume
  * @property Unit $FOOT                unit of length
- * @property Unit $FURLONG             unit of length
  * @property Unit $GALLON              unit of volume
  * @property Unit $GILL                unit of volume
  * @property Unit $INCH                unit of length
- * @property Unit $LINK                unit of length
  * @property Unit $MILE                unit of length
  * @property Unit $MINIM               unit of volume
  * @property Unit $PECK                unit of volume
  * @property Unit $PINT                unit of volume
  * @property Unit $QUART               unit of volume
- * @property Unit $ROD                 unit of length
  * @property Unit $SECTION             unit of area
  * @property Unit $SHORT_HUNDREDWEIGHT unit of mass
  * @property Unit $SHORT_TON           unit of mass
@@ -56,13 +52,27 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $CUBIC_INCH          unit of volume
  * @property Unit $CUBIC_MILE          unit of volume
  * @property Unit $CUBIC_YARD          unit of volume
+ * @property Unit $POUND               unit of mass
+ * @property Unit $OUNCE               unit of mass
+ * @property Unit $DRAM                unit of mass
+ * @property Unit $QUARTER             unit of mass
+ * @property Unit $GRAIN               unit of mass
+ * @property Unit $POINT               unit of length
+ * @property Unit $PICA                unit of length
+ * @property Unit $CABLE               unit of length
+ * @property Unit $LINK_SURVEY         unit of length
+ * @property Unit $FOOT_SURVEY         unit of length
+ * @property Unit $ROD_SURVEY          unit of length
+ * @property Unit $CHAIN_SURVEY        unit of length
+ * @property Unit $FURLONG_SURVEY      unit of length
+ * @property Unit $MILE_SURVEY         unit of length
+ * @property Unit $LEAGUE_SURVEY       unit of length
  */
 class USCustomaryUnits extends SystemOfUnits
 {
     const ACRE = 'ACRE';
     const BARREL = 'BARREL';
     const BUSHEL = 'BUSHEL';
-    const CHAIN = 'CHAIN';
     const CORD = 'CORD';
     const CUBIC_FOOT = 'CUBIC_FOOT';
     const CUBIC_INCH = 'CUBIC_INCH';
@@ -75,17 +85,14 @@ class USCustomaryUnits extends SystemOfUnits
     const FLUID_DRAM = 'FLUID_DRAM';
     const FLUID_OUNCE = 'FLUID_OUNCE';
     const FOOT = 'FOOT';
-    const FURLONG = 'FURLONG';
     const GALLON = 'GALLON';
     const GILL = 'GILL';
     const INCH = 'INCH';
-    const LINK = 'LINK';
     const MILE = 'MILE';
     const MINIM = 'MINIM';
     const PECK = 'PECK';
     const PINT = 'PINT';
     const QUART = 'QUART';
-    const ROD = 'ROD';
     const SECTION = 'SECTION';
     const SHORT_HUNDREDWEIGHT = 'SHORT_HUNDREDWEIGHT';
     const SHORT_TON = 'SHORT_TON';
@@ -101,6 +108,21 @@ class USCustomaryUnits extends SystemOfUnits
     const YARD = 'YARD';
     const FEET_PER_SECOND = 'FEET_PER_SECOND';
     const MILES_PER_HOUR = 'MILES_PER_HOUR';
+    const POUND = 'POUND';
+    const OUNCE = 'OUNCE';
+    const DRAM = 'DRAM';
+    const QUARTER = 'QUARTER';
+    const GRAIN = 'GRAIN';
+    const POINT = 'POINT';
+    const PICA = 'PICA';
+    const CABLE = 'CABLE';
+    const LINK_SURVEY = 'LINK_SURVEY';
+    const FOOT_SURVEY = 'FOOT_SURVEY';
+    const ROD_SURVEY = 'ROD_SURVEY';
+    const CHAIN_SURVEY = 'CHAIN_SURVEY';
+    const FURLONG_SURVEY = 'FURLONG_SURVEY';
+    const MILE_SURVEY = 'MILE_SURVEY';
+    const LEAGUE_SURVEY = 'LEAGUE_SURVEY';
 
     /** @var array list of units grouped by quantity */
     protected static $mapping = [
@@ -115,18 +137,29 @@ class USCustomaryUnits extends SystemOfUnits
             self::TOWNSHIP => 'twp',
         ],
         Length::class => [
-            self::CHAIN => 'chain',
+            self::CHAIN_SURVEY => 'ch',
             self::FATHOM => 'ftm',
             self::FOOT => 'ft',
-            self::FURLONG => 'fur',
+            self::FURLONG_SURVEY => 'fur',
             self::INCH => 'in',
-            self::LINK => 'link',
+            self::LINK_SURVEY => 'li',
+            self::MILE_SURVEY => 'mi',
             self::MILE => 'mi',
-            self::ROD => 'rod',
+            self::ROD_SURVEY => 'rd',
+            self::LEAGUE_SURVEY => 'lea',
+            self::FOOT_SURVEY => 'ft',
             self::THOU => 'th',
             self::YARD => 'yd',
+            self::POINT => 'p',
+            self::PICA => 'P̸',
+            self::CABLE => 'cb',
         ],
         Mass::class => [
+            self::GRAIN => 'gr',
+            self::DRAM => 'dr',
+            self::OUNCE => 'oz',
+            self::POUND => 'lb',
+            self::QUARTER => 'qr',
             self::SHORT_HUNDREDWEIGHT => 'cwt',
             self::SHORT_TON => 'ton',
         ],
@@ -182,12 +215,12 @@ class USCustomaryUnits extends SystemOfUnits
         switch ($code) {
             case self::ACRE:
                 return new TransformedUnit(
-                    new CompoundUnit($this->ROD->pow(2), Area::class),
+                    new CompoundUnit($this->ROD_SURVEY->pow(2), Area::class),
                     new RationalConverter(160, 1),
                     $symbol
                 );
             case self::SECTION:
-                return new CompoundUnit($this->MILE->pow(2), Area::class, $symbol);
+                return new CompoundUnit($this->MILE_SURVEY->pow(2), Area::class, $symbol);
             case self::SQUARE_FOOT:
                 return new CompoundUnit($this->FOOT->pow(2), Area::class, $symbol);
             case self::SQUARE_INCH:
@@ -195,7 +228,7 @@ class USCustomaryUnits extends SystemOfUnits
             case self::SQUARE_MILE:
                 return new CompoundUnit($this->MILE->pow(2), Area::class, $symbol);
             case self::SQUARE_ROD:
-                return new CompoundUnit($this->ROD->pow(2), Area::class, $symbol);
+                return new CompoundUnit($this->ROD_SURVEY->pow(2), Area::class, $symbol);
             case self::SQUARE_YARD:
                 return new CompoundUnit($this->YARD->pow(2), Area::class, $symbol);
             case self::TOWNSHIP:
@@ -212,26 +245,40 @@ class USCustomaryUnits extends SystemOfUnits
     protected function buildLength($code, $symbol)
     {
         switch ($code) {
-            case self::CHAIN:
-                return new TransformedUnit($this->ROD, new RationalConverter(4, 1), $symbol);
-            case self::FATHOM:
-                return new TransformedUnit($this->FOOT, new RationalConverter(6, 1), $symbol);
-            case self::FOOT:
-                return new TransformedUnit($this->standardUnits->METRE, new RationalConverter(1200, 3937), $symbol);
-            case self::FURLONG:
-                return new TransformedUnit($this->ROD, new RationalConverter(40, 1), $symbol);
-            case self::INCH:
-                return new TransformedUnit($this->FOOT, new RationalConverter(1, 12), $symbol);
-            case self::LINK:
-                return new TransformedUnit($this->CHAIN, new RationalConverter(1, 100), $symbol);
-            case self::MILE:
-                return new TransformedUnit($this->FURLONG, new RationalConverter(8, 1), $symbol);
-            case self::ROD:
-                return new TransformedUnit($this->FOOT, new RationalConverter(33, 2), $symbol);
             case self::THOU:
                 return new TransformedUnit($this->INCH, new RationalConverter(1, 1000), $symbol);
+            case self::POINT:
+                return new TransformedUnit($this->PICA, new RationalConverter(1, 12), $symbol);
+            case self::PICA:
+                return new TransformedUnit($this->INCH, new RationalConverter(1, 6), $symbol);
+            case self::INCH:
+                return new TransformedUnit($this->standardUnits->CENTIMETRE, new RationalConverter(254, 100), $symbol);
+            case self::FOOT:
+                return new TransformedUnit($this->INCH, new RationalConverter(12, 1), $symbol);
             case self::YARD:
                 return new TransformedUnit($this->FOOT, new RationalConverter(3, 1), $symbol);
+            case self::MILE:
+                return new TransformedUnit($this->YARD, new RationalConverter(1760, 1), $symbol);
+
+            case self::LINK_SURVEY:
+                return new TransformedUnit($this->FOOT_SURVEY, new RationalConverter(33, 50), $symbol);
+            case self::FOOT_SURVEY:
+                return new TransformedUnit($this->standardUnits->METRE, new RationalConverter(1200, 3937), $symbol);
+            case self::ROD_SURVEY:
+                return new TransformedUnit($this->LINK_SURVEY, new RationalConverter(25, 1), $symbol);
+            case self::CHAIN_SURVEY:
+                return new TransformedUnit($this->ROD_SURVEY, new RationalConverter(4, 1), $symbol);
+            case self::FURLONG_SURVEY:
+                return new TransformedUnit($this->CHAIN_SURVEY, new RationalConverter(10, 1), $symbol);
+            case self::MILE_SURVEY:
+                return new TransformedUnit($this->FURLONG_SURVEY, new RationalConverter(8, 1), $symbol);
+            case self::LEAGUE_SURVEY:
+                return new TransformedUnit($this->MILE_SURVEY, new RationalConverter(3, 1), $symbol);
+
+            case self::FATHOM:
+                return new TransformedUnit($this->YARD, new RationalConverter(2, 1), $symbol);
+            case self::CABLE:
+                return new TransformedUnit($this->FATHOM, new RationalConverter(120, 1), $symbol);
         }
     }
 
@@ -300,8 +347,22 @@ class USCustomaryUnits extends SystemOfUnits
     protected function buildMass($code, $symbol)
     {
         switch ($code) {
+            case self::POUND:
+                return new TransformedUnit(
+                    $this->standardUnits->KILOGRAM,
+                    new RationalConverter(45359237, 100000000),
+                    $symbol
+                );
+            case self::GRAIN:
+                return new TransformedUnit($this->POUND, new RationalConverter(1, 7000), $symbol);
+            case self::DRAM:
+                return new TransformedUnit($this->OUNCE, new RationalConverter(1, 16), $symbol);
+            case self::OUNCE:
+                return new TransformedUnit($this->POUND, new RationalConverter(1, 16), $symbol);
+            case self::QUARTER:
+                return new TransformedUnit($this->POUND, new RationalConverter(25, 1), $symbol);
             case self::SHORT_HUNDREDWEIGHT:
-                return new TransformedUnit($this->standardUnits->POUND, new RationalConverter(100, 1), $symbol);
+                return new TransformedUnit($this->QUARTER, new RationalConverter(4, 1), $symbol);
             case self::SHORT_TON:
                 return new TransformedUnit($this->SHORT_HUNDREDWEIGHT, new RationalConverter(20, 1), $symbol);
         }

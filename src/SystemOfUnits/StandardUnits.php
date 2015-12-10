@@ -83,17 +83,12 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $CENTIMETRE                unit of length
  * @property Unit $CENTIRADIAN               unit of angle
  * @property Unit $COULOMB                   unit of electric charge
- * @property Unit $CUBIC_FOOT                unit of volume
- * @property Unit $CUBIC_INCH                unit of volume
  * @property Unit $CUBIC_METRE               unit of volume
- * @property Unit $CUBIC_MILE                unit of volume
- * @property Unit $CUBIC_YARD                unit of volume
  * @property Unit $CURIE                     unit of radioactive activity
  * @property Unit $DAY                       unit of duration
  * @property Unit $DAY_SIDEREAL              unit of duration
  * @property Unit $DECIBEL                   unit of level
  * @property Unit $DEGREE_ANGLE              unit of angle
- * @property Unit $DRAM                      unit of mass
  * @property Unit $DYNE                      unit of force
  * @property Unit $ELECTRON_MASS             unit of mass
  * @property Unit $ELECTRON_VOLT             unit of energy
@@ -102,14 +97,10 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $FAHRENHEIT                unit of temperature
  * @property Unit $FARAD                     unit of electric capacitance
  * @property Unit $FARADAY_CONSTANT          unit of electric charge
- * @property Unit $FATHOM                    unit of length
- * @property Unit $FEET_PER_SECOND           unit of velocity
- * @property Unit $FOOT                      unit of length
  * @property Unit $FRANKLIN                  unit of electric charge
  * @property Unit $GAUSS                     unit of magnetic flux density
  * @property Unit $GILBERT                   unit of electric current
  * @property Unit $GRADE                     unit of angle
- * @property Unit $GRAIN                     unit of mass
  * @property Unit $GRAM                      unit of mass
  * @property Unit $GRAM_FORCE                unit of force
  * @property Unit $GRAVITY_CONSTANT          unit of
@@ -122,7 +113,6 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $HORSEPOWER_MECHANICAL     unit of power
  * @property Unit $HORSEPOWER_METRIC         unit of power
  * @property Unit $HOUR                      unit of duration
- * @property Unit $INCH                      unit of length
  * @property Unit $INCH_OF_MERCURY           unit of pressure
  * @property Unit $JOULE                     unit of energy
  * @property Unit $KATAL                     unit of catalytic activity
@@ -135,7 +125,6 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $KNOT                      unit of velocity
  * @property Unit $LAMBERT                   unit of illuminance
  * @property Unit $LIGHT_YEAR                unit of length
- * @property Unit $LINE                      unit of length
  * @property Unit $LITRE                     unit of volume
  * @property Unit $LUMEN                     unit of luminous flux
  * @property Unit $LUX                       unit of illuminance
@@ -143,8 +132,6 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $METRE                     unit of length
  * @property Unit $METRES_PER_SECOND         unit of velocity
  * @property Unit $METRES_PER_SQUARE_SECOND  unit of acceleration
- * @property Unit $MILE                      unit of length
- * @property Unit $MILES_PER_HOUR            unit of velocity
  * @property Unit $MILLIGRAM                 unit of mass
  * @property Unit $MILLIMETRE                unit of length
  * @property Unit $MILLIMETRE_OF_MERCURY     unit of pressure
@@ -168,15 +155,8 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $PERMEABILITY_OF_VACUUM    unit of
  * @property Unit $PERMITTIVITY_OF_VACUUM    unit of
  * @property Unit $PI                        constant
- * @property Unit $PICA                      unit of length
- * @property Unit $PICA_PRINTER              unit of length
  * @property Unit $PLANCK_CONSTANT           unit of
- * @property Unit $POINT                     unit of length
- * @property Unit $POINT_PRINTER             unit of length
  * @property Unit $POISE                     unit of dynamic viscosity
- * @property Unit $POUND                     unit of mass
- * @property Unit $POUND_FORCE               unit of force
- * @property Unit $POUND_PER_SQUARE_INCH     unit of pressure
  * @property Unit $PROTON_MASS               unit of mass
  * @property Unit $RAD                       unit of radiation dose absorbed
  * @property Unit $RADIAN                    unit of angle
@@ -191,23 +171,17 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $SPEED_OF_LIGHT            unit of velocity
  * @property Unit $SPHERE                    unit of solid angle
  * @property Unit $SQUARE_CENTIMETRE         unit of area
- * @property Unit $SQUARE_FOOT               unit of area
- * @property Unit $SQUARE_INCH               unit of area
  * @property Unit $SQUARE_METRE              unit of area
- * @property Unit $SQUARE_MILE               unit of area
  * @property Unit $SQUARE_MILLIMETRE         unit of area
- * @property Unit $SQUARE_YARD               unit of area
  * @property Unit $STERADIAN                 unit of solid angle
  * @property Unit $STOKE                     unit of kinematic viscosity
  * @property Unit $TESLA                     unit of magnetic flux density
- * @property Unit $THOU                      unit of length
  * @property Unit $TONNE                     unit of mass
  * @property Unit $TORR                      unit of pressure
  * @property Unit $VOLT                      unit of electric potential
  * @property Unit $WATT                      unit of power
  * @property Unit $WEBER                     unit of magnetic flux
  * @property Unit $WEEK                      unit of duration
- * @property Unit $YARD                      unit of length
  * @property Unit $YEAR                      unit of duration
  * @property Unit $YEAR_CALENDAR             unit of duration
  * @property Unit $YEAR_GREGORIAN            unit of duration
@@ -247,17 +221,12 @@ class StandardUnits extends SystemOfUnits
     const CENTIMETRE = 'CENTIMETRE';
     const CENTIRADIAN = 'CENTIRADIAN';
     const COULOMB = 'COULOMB';
-    const CUBIC_FOOT = 'CUBIC_FOOT';
-    const CUBIC_INCH = 'CUBIC_INCH';
     const CUBIC_METRE = 'CUBIC_METRE';
-    const CUBIC_MILE = 'CUBIC_MILE';
-    const CUBIC_YARD = 'CUBIC_YARD';
     const CURIE = 'CURIE';
     const DAY = 'DAY';
     const DAY_SIDEREAL = 'DAY_SIDEREAL';
     const DECIBEL = 'DECIBEL';
     const DEGREE_ANGLE = 'DEGREE_ANGLE';
-    const DRAM = 'DRAM';
     const DYNE = 'DYNE';
     const ELECTRON_MASS = 'ELECTRON_MASS';
     const ELECTRON_VOLT = 'ELECTRON_VOLT';
@@ -266,14 +235,11 @@ class StandardUnits extends SystemOfUnits
     const FAHRENHEIT = 'FAHRENHEIT';
     const FARAD = 'FARAD';
     const FARADAY_CONSTANT = 'FARADAY_CONSTANT';
-    const FATHOM = 'FATHOM';
-    const FEET_PER_SECOND = 'FEET_PER_SECOND';
     const FOOT = 'FOOT';
     const FRANKLIN = 'FRANKLIN';
     const GAUSS = 'GAUSS';
     const GILBERT = 'GILBERT';
     const GRADE = 'GRADE';
-    const GRAIN = 'GRAIN';
     const GRAM = 'GRAM';
     const GRAM_FORCE = 'GRAM_FORCE';
     const GRAVITY_CONSTANT = 'GRAVITY_CONSTANT';
@@ -286,7 +252,6 @@ class StandardUnits extends SystemOfUnits
     const HORSEPOWER_MECHANICAL = 'HORSEPOWER_MECHANICAL';
     const HORSEPOWER_METRIC = 'HORSEPOWER_METRIC';
     const HOUR = 'HOUR';
-    const INCH = 'INCH';
     const INCH_OF_MERCURY = 'INCH_OF_MERCURY';
     const JOULE = 'JOULE';
     const KATAL = 'KATAL';
@@ -299,7 +264,6 @@ class StandardUnits extends SystemOfUnits
     const KNOT = 'KNOT';
     const LAMBERT = 'LAMBERT';
     const LIGHT_YEAR = 'LIGHT_YEAR';
-    const LINE = 'LINE';
     const LITRE = 'LITRE';
     const LUMEN = 'LUMEN';
     const LUX = 'LUX';
@@ -307,8 +271,6 @@ class StandardUnits extends SystemOfUnits
     const METRE = 'METRE';
     const METRES_PER_SECOND = 'METRES_PER_SECOND';
     const METRES_PER_SQUARE_SECOND = 'METRES_PER_SQUARE_SECOND';
-    const MILE = 'MILE';
-    const MILES_PER_HOUR = 'MILES_PER_HOUR';
     const MILLIGRAM = 'MILLIGRAM';
     const MILLIMETRE = 'MILLIMETRE';
     const MILLIMETRE_OF_MERCURY = 'MILLIMETRE_OF_MERCURY';
@@ -323,7 +285,6 @@ class StandardUnits extends SystemOfUnits
     const NEPER = 'NEPER';
     const NEWTON = 'NEWTON';
     const OHM = 'OHM';
-    const OUNCE = 'OUNCE';
     const PARSEC = 'PARSEC';
     const PASCAL = 'PASCAL';
     const PER_CENT_MILLE = 'PER_CENT_MILLE';
@@ -332,15 +293,8 @@ class StandardUnits extends SystemOfUnits
     const PERMEABILITY_OF_VACUUM = 'PERMEABILITY_OF_VACUUM';
     const PERMITTIVITY_OF_VACUUM = 'PERMITTIVITY_OF_VACUUM';
     const PI = 'PI';
-    const PICA = 'PICA';
-    const PICA_PRINTER = 'PICA_PRINTER';
     const PLANCK_CONSTANT = 'PLANCK_CONSTANT';
-    const POINT = 'POINT';
-    const POINT_PRINTER = 'POINT_PRINTER';
     const POISE = 'POISE';
-    const POUND = 'POUND';
-    const POUND_FORCE = 'POUND_FORCE';
-    const POUND_PER_SQUARE_INCH = 'POUND_PER_SQUARE_INCH';
     const PROTON_MASS = 'PROTON_MASS';
     const RAD = 'RAD';
     const RADIAN = 'RADIAN';
@@ -355,23 +309,17 @@ class StandardUnits extends SystemOfUnits
     const SPEED_OF_LIGHT = 'SPEED_OF_LIGHT';
     const SPHERE = 'SPHERE';
     const SQUARE_CENTIMETRE = 'SQUARE_CENTIMETRE';
-    const SQUARE_FOOT = 'SQUARE_FOOT';
-    const SQUARE_INCH = 'SQUARE_INCH';
     const SQUARE_METRE = 'SQUARE_METRE';
-    const SQUARE_MILE = 'SQUARE_MILE';
     const SQUARE_MILLIMETRE = 'SQUARE_MILLIMETRE';
-    const SQUARE_YARD = 'SQUARE_YARD';
     const STERADIAN = 'STERADIAN';
     const STOKE = 'STOKE';
     const TESLA = 'TESLA';
-    const THOU = 'THOU';
     const TONNE = 'TONNE';
     const TORR = 'TORR';
     const VOLT = 'VOLT';
     const WATT = 'WATT';
     const WEBER = 'WEBER';
     const WEEK = 'WEEK';
-    const YARD = 'YARD';
     const YEAR = 'YEAR';
     const YEAR_CALENDAR = 'YEAR_CALENDAR';
     const YEAR_GREGORIAN = 'YEAR_GREGORIAN';
@@ -393,34 +341,19 @@ class StandardUnits extends SystemOfUnits
             self::ARE => 'a',
             self::HECTARE => 'a*100',
             self::SQUARE_CENTIMETRE => 'cm²',
-            self::SQUARE_FOOT => 'ft²',
-            self::SQUARE_INCH => 'in²',
             self::SQUARE_METRE => 'm²',
-            self::SQUARE_MILE => 'mi²',
             self::SQUARE_MILLIMETRE => 'mm²',
-            self::SQUARE_YARD => 'yd²',
         ],
         Length::class => [
             self::ANGSTROM => 'Å',
             self::ASTRONOMICAL_UNIT => 'AU',
             self::CENTIMETRE => 'cm',
-            self::FATHOM => 'ftm',
-            self::FOOT => 'ft',
-            self::INCH => 'in',
             self::KILOMETRE => 'km',
             self::LIGHT_YEAR => 'ly',
-            self::LINE => 'line',
             self::METRE => 'm',
-            self::MILE => 'mi',
             self::MILLIMETRE => 'mm',
             self::NAUTICAL_MILE => 'nmi',
             self::PARSEC => 'pc',
-            self::PICA_PRINTER => 'pc_p',
-            self::PICA => 'pc',
-            self::POINT_PRINTER => 'pt_p',
-            self::POINT => 'pt',
-            self::THOU => 'th',
-            self::YARD => 'yd',
         ],
         Pressure::class => [
             self::ATMOSPHERE_STANDARD => 'atm',
@@ -429,29 +362,20 @@ class StandardUnits extends SystemOfUnits
             self::INCH_OF_MERCURY => 'inHg',
             self::MILLIMETRE_OF_MERCURY => 'mmHg',
             self::PASCAL => 'Pa',
-            self::POUND_PER_SQUARE_INCH => 'psi',
             self::TORR => 'Torr',
         ],
         Mass::class => [
             self::CARAT_METRIC => 'ct',
-            self::DRAM => 'dr',
-            self::GRAIN => 'gr',
             self::GRAM => 'g',
             self::KILOGRAM => 'kg',
             self::MILLIGRAM => 'mg',
-            self::OUNCE => 'oz',
-            self::POUND => 'lb',
             self::TONNE => 't',
         ],
         AmountOfSubstance::class => [
             self::MOLE => 'mol',
         ],
         Volume::class => [
-            self::CUBIC_FOOT => 'ft³',
-            self::CUBIC_INCH => 'in³',
             self::CUBIC_METRE => 'm³',
-            self::CUBIC_MILE => 'mi³',
-            self::CUBIC_YARD => 'yd³',
             self::LITRE => 'l',
         ],
         DataRate::class => [
@@ -536,17 +460,14 @@ class StandardUnits extends SystemOfUnits
             self::GRAM_FORCE => 'gf',
             self::KILOGRAM_FORCE => 'kgf',
             self::NEWTON => 'N',
-            self::POUND_FORCE => 'lbf',
         ],
         ElectricCapacitance::class => [
             self::FARAD => 'F',
         ],
         Velocity::class => [
-            self::FEET_PER_SECOND => 'ft/s',
             self::KILOMETRES_PER_HOUR => 'km/h',
             self::KNOT => 'kn',
             self::METRES_PER_SECOND => 'm/s',
-            self::MILES_PER_HOUR => 'mi/h',
         ],
         MagneticFluxDensity::class => [
             self::GAUSS => 'Gs',
@@ -674,18 +595,10 @@ class StandardUnits extends SystemOfUnits
                 return new TransformedUnit($this->ARE, new RationalConverter(100, 1), $symbol);
             case self::SQUARE_CENTIMETRE:
                 return new CompoundUnit($this->CENTIMETRE->pow(2), Area::class, $symbol);
-            case self::SQUARE_FOOT:
-                return new CompoundUnit($this->FOOT->pow(2), Area::class, $symbol);
-            case self::SQUARE_INCH:
-                return new CompoundUnit($this->INCH->pow(2), Area::class, $symbol);
             case self::SQUARE_METRE:
                 return new CompoundUnit($this->METRE->pow(2), Area::class, $symbol);
-            case self::SQUARE_MILE:
-                return new CompoundUnit($this->MILE->pow(2), Area::class, $symbol);
             case self::SQUARE_MILLIMETRE:
                 return new CompoundUnit($this->MILLIMETRE->pow(2), Area::class, $symbol);
-            case self::SQUARE_YARD:
-                return new CompoundUnit($this->YARD->pow(2), Area::class, $symbol);
         }
     }
 
@@ -704,40 +617,18 @@ class StandardUnits extends SystemOfUnits
                 return new TransformedUnit($this->METRE, new MultiplyConverter(1.49597870691E11), $symbol);
             case self::CENTIMETRE:
                 return new TransformedUnit($this->METRE, new RationalConverter(1, 100), $symbol);
-            case self::FATHOM:
-                return new TransformedUnit($this->FOOT, new RationalConverter(6, 1), $symbol);
-            case self::FOOT:
-                return new TransformedUnit($this->INCH, new RationalConverter(12, 1), $symbol);
-            case self::INCH:
-                return new TransformedUnit($this->CENTIMETRE, new RationalConverter(254, 100), $symbol);
             case self::KILOMETRE:
                 return new TransformedUnit($this->METRE, new RationalConverter(1000, 1), $symbol);
             case self::LIGHT_YEAR:
                 return new TransformedUnit($this->METRE, new MultiplyConverter(9.460528405E15), $symbol);
-            case self::LINE:
-                return new TransformedUnit($this->INCH, new RationalConverter(1, 12), $symbol);
             case self::METRE:
                 return new BaseUnit($symbol, Length::class, new Dimension('L'));
-            case self::MILE:
-                return new TransformedUnit($this->FOOT, new RationalConverter(5280, 1), $symbol);
             case self::MILLIMETRE:
                 return new TransformedUnit($this->METRE, new RationalConverter(1, 1000), $symbol);
             case self::NAUTICAL_MILE:
                 return new TransformedUnit($this->METRE, new RationalConverter(1852, 1), $symbol);
             case self::PARSEC:
                 return new TransformedUnit($this->METRE, new MultiplyConverter(3.085677E16), $symbol);
-            case self::PICA_PRINTER:
-                return new TransformedUnit($this->POINT_PRINTER, new RationalConverter(12, 1), $symbol);
-            case self::PICA:
-                return new TransformedUnit($this->POINT, new RationalConverter(12, 1), $symbol);
-            case self::POINT_PRINTER:
-                return new TransformedUnit($this->INCH, new RationalConverter(13837, 1000000), $symbol);
-            case self::POINT:
-                return new TransformedUnit($this->LINE, new RationalConverter(1, 6), $symbol);
-            case self::THOU:
-                return new TransformedUnit($this->INCH, new RationalConverter(1, 1000), $symbol);
-            case self::YARD:
-                return new TransformedUnit($this->FOOT, new RationalConverter(3, 1), $symbol);
         }
     }
 
@@ -766,12 +657,6 @@ class StandardUnits extends SystemOfUnits
                 return new TransformedUnit($this->PASCAL, new MultiplyConverter(133.322), $symbol);
             case self::PASCAL:
                 return new AlternateUnit($this->NEWTON->divide($this->SQUARE_METRE), $symbol, Pressure::class);
-            case self::POUND_PER_SQUARE_INCH:
-                return new CompoundUnit(
-                    $this->POUND_FORCE->divide($this->SQUARE_INCH),
-                    Pressure::class,
-                    $symbol
-                );
             case self::TORR:
                 return new TransformedUnit($this->ATMOSPHERE_STANDARD, new RationalConverter(1, 760), $symbol);
         }
@@ -788,20 +673,12 @@ class StandardUnits extends SystemOfUnits
         switch ($code) {
             case self::CARAT_METRIC:
                 return new TransformedUnit($this->GRAM, new RationalConverter(1, 5), $symbol);
-            case self::DRAM:
-                return new TransformedUnit($this->OUNCE, new RationalConverter(1, 16), $symbol);
-            case self::GRAIN:
-                return new TransformedUnit($this->MILLIGRAM, new RationalConverter(6479891, 100000), $symbol);
             case self::GRAM:
                 return new TransformedUnit($this->KILOGRAM, new RationalConverter(1, 1000), $symbol);
             case self::KILOGRAM:
                 return new BaseUnit($symbol, Mass::class, new Dimension('M'));
             case self::MILLIGRAM:
                 return new TransformedUnit($this->GRAM, new RationalConverter(1, 1000), $symbol);
-            case self::OUNCE:
-                return new TransformedUnit($this->POUND, new RationalConverter(1, 16), $symbol);
-            case self::POUND:
-                return new TransformedUnit($this->GRAIN, new RationalConverter(7000, 1), $symbol);
             case self::TONNE:
                 return new TransformedUnit($this->KILOGRAM, new RationalConverter(1000, 1), $symbol);
         }
@@ -830,16 +707,8 @@ class StandardUnits extends SystemOfUnits
     protected function buildVolume($code, $symbol)
     {
         switch ($code) {
-            case self::CUBIC_FOOT:
-                return new CompoundUnit($this->FOOT->pow(3), Volume::class, $symbol);
-            case self::CUBIC_INCH:
-                return new CompoundUnit($this->INCH->pow(3), Volume::class, $symbol);
             case self::CUBIC_METRE:
                 return new CompoundUnit($this->METRE->pow(3), Volume::class, $symbol);
-            case self::CUBIC_MILE:
-                return new CompoundUnit($this->MILE->pow(3), Volume::class, $symbol);
-            case self::CUBIC_YARD:
-                return new CompoundUnit($this->YARD->pow(3), Volume::class, $symbol);
             case self::LITRE:
                 return new TransformedUnit($this->CUBIC_METRE, new RationalConverter(1, 1000), $symbol);
         }
@@ -1219,12 +1088,6 @@ class StandardUnits extends SystemOfUnits
                     $symbol,
                     Force::class
                 );
-            case self::POUND_FORCE:
-                return new TransformedUnit(
-                    $this->NEWTON,
-                    new RationalConverter(44482216152605, 10000000000000),
-                    $symbol
-                );
         }
     }
 
@@ -1251,8 +1114,6 @@ class StandardUnits extends SystemOfUnits
     protected function buildVelocity($code, $symbol)
     {
         switch ($code) {
-            case self::FEET_PER_SECOND:
-                return new CompoundUnit($this->FOOT->divide($this->SECOND), Velocity::class, $symbol);
             case self::KILOMETRES_PER_HOUR:
                 return new CompoundUnit($this->KILOMETRE->divide($this->HOUR), Velocity::class, $symbol);
             case self::KNOT:
@@ -1263,8 +1124,6 @@ class StandardUnits extends SystemOfUnits
                 );
             case self::METRES_PER_SECOND:
                 return new CompoundUnit($this->METRE->divide($this->SECOND), Velocity::class, $symbol);
-            case self::MILES_PER_HOUR:
-                return new CompoundUnit($this->MILE->divide($this->HOUR), Velocity::class, $symbol);
         }
     }
 

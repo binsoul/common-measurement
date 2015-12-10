@@ -4,8 +4,10 @@ namespace BinSoul\Common\Measurement\SystemOfUnits;
 
 use BinSoul\Common\Measurement\Converter\RationalConverter;
 use BinSoul\Common\Measurement\Quantity\Area;
+use BinSoul\Common\Measurement\Quantity\Force;
 use BinSoul\Common\Measurement\Quantity\Length;
 use BinSoul\Common\Measurement\Quantity\Mass;
+use BinSoul\Common\Measurement\Quantity\Pressure;
 use BinSoul\Common\Measurement\Quantity\Velocity;
 use BinSoul\Common\Measurement\Quantity\Volume;
 use BinSoul\Common\Measurement\SystemOfUnits;
@@ -14,45 +16,48 @@ use BinSoul\Common\Measurement\Unit\CompoundUnit;
 use BinSoul\Common\Measurement\Unit\TransformedUnit;
 
 /**
- * @property Unit $ACRE                unit of area
- * @property Unit $BUSHEL              unit of volume
- * @property Unit $CHAIN               unit of length
- * @property Unit $FATHOM              unit of length
- * @property Unit $FLUID_DRAM          unit of volume
- * @property Unit $FLUID_OUNCE         unit of volume
- * @property Unit $FOOT                unit of length
- * @property Unit $GALLON              unit of volume
- * @property Unit $GILL                unit of volume
- * @property Unit $INCH                unit of length
- * @property Unit $KNOT                unit of velocity
- * @property Unit $LINK                unit of length
- * @property Unit $LONG_HUNDREDWEIGHT  unit of mass
- * @property Unit $LONG_TON            unit of mass
- * @property Unit $MILE                unit of length
- * @property Unit $MILES_PER_HOUR      unit of velocity
- * @property Unit $MINIM               unit of volume
- * @property Unit $NAUTICAL_MILE       unit of length
- * @property Unit $PACE                unit of length
- * @property Unit $PECK                unit of volume
- * @property Unit $PINT                unit of volume
- * @property Unit $QUART               unit of volume
- * @property Unit $ROD                 unit of length
- * @property Unit $SHORT_HUNDREDWEIGHT unit of mass
- * @property Unit $SHORT_TON           unit of mass
- * @property Unit $STONE               unit of mass
- * @property Unit $YARD                unit of length
- * @property Unit $CUBIC_FOOT          unit of volume
- * @property Unit $CUBIC_INCH          unit of volume
- * @property Unit $CUBIC_MILE          unit of volume
- * @property Unit $CUBIC_YARD          unit of volume
- * @property Unit $FEET_PER_SECOND     unit of velocity
- * @property Unit $SQUARE_FOOT         unit of area
- * @property Unit $SQUARE_INCH         unit of area
- * @property Unit $SQUARE_MILE         unit of area
- * @property Unit $SQUARE_YARD         unit of area
- * @property Unit $POUND               unit of mass
- * @property Unit $OUNCE               unit of mass
- * @property Unit $GRAIN               unit of mass
+ * @property Unit $ACRE                  unit of area
+ * @property Unit $BUSHEL                unit of volume
+ * @property Unit $CHAIN                 unit of length
+ * @property Unit $FATHOM                unit of length
+ * @property Unit $FLUID_DRAM            unit of volume
+ * @property Unit $FLUID_OUNCE           unit of volume
+ * @property Unit $FOOT                  unit of length
+ * @property Unit $GALLON                unit of volume
+ * @property Unit $GILL                  unit of volume
+ * @property Unit $INCH                  unit of length
+ * @property Unit $KNOT                  unit of velocity
+ * @property Unit $LINK                  unit of length
+ * @property Unit $LONG_HUNDREDWEIGHT    unit of mass
+ * @property Unit $LONG_TON              unit of mass
+ * @property Unit $MILE                  unit of length
+ * @property Unit $MILES_PER_HOUR        unit of velocity
+ * @property Unit $MINIM                 unit of volume
+ * @property Unit $NAUTICAL_MILE         unit of length
+ * @property Unit $PACE                  unit of length
+ * @property Unit $PECK                  unit of volume
+ * @property Unit $PINT                  unit of volume
+ * @property Unit $QUART                 unit of volume
+ * @property Unit $ROD                   unit of length
+ * @property Unit $SHORT_HUNDREDWEIGHT   unit of mass
+ * @property Unit $SHORT_TON             unit of mass
+ * @property Unit $STONE                 unit of mass
+ * @property Unit $YARD                  unit of length
+ * @property Unit $CUBIC_FOOT            unit of volume
+ * @property Unit $CUBIC_INCH            unit of volume
+ * @property Unit $CUBIC_MILE            unit of volume
+ * @property Unit $CUBIC_YARD            unit of volume
+ * @property Unit $FEET_PER_SECOND       unit of velocity
+ * @property Unit $SQUARE_FOOT           unit of area
+ * @property Unit $SQUARE_INCH           unit of area
+ * @property Unit $SQUARE_MILE           unit of area
+ * @property Unit $SQUARE_YARD           unit of area
+ * @property Unit $POUND                 unit of mass
+ * @property Unit $OUNCE                 unit of mass
+ * @property Unit $DRAM                  unit of mass
+ * @property Unit $QUARTER               unit of mass
+ * @property Unit $POUND_FORCE           unit of force
+ * @property Unit $POUND_PER_SQUARE_INCH unit of pressure
  */
 class ImperialUnits extends SystemOfUnits
 {
@@ -63,7 +68,6 @@ class ImperialUnits extends SystemOfUnits
     const CUBIC_INCH = 'CUBIC_INCH';
     const CUBIC_MILE = 'CUBIC_MILE';
     const CUBIC_YARD = 'CUBIC_YARD';
-    const GRAIN = 'GRAIN';
     const FATHOM = 'FATHOM';
     const FEET_PER_SECOND = 'FEET_PER_SECOND';
     const FLUID_DRAM = 'FLUID_DRAM';
@@ -93,6 +97,10 @@ class ImperialUnits extends SystemOfUnits
     const YARD = 'YARD';
     const POUND = 'POUND';
     const OUNCE = 'OUNCE';
+    const DRAM = 'DRAM';
+    const QUARTER = 'QUARTER';
+    const POUND_FORCE = 'POUND_FORCE';
+    const POUND_PER_SQUARE_INCH = 'POUND_PER_SQUARE_INCH';
 
     /** @var array list of units grouped by quantity */
     protected static $mapping = [
@@ -102,6 +110,9 @@ class ImperialUnits extends SystemOfUnits
             self::SQUARE_INCH => 'in²',
             self::SQUARE_MILE => 'mi²',
             self::SQUARE_YARD => 'yd²',
+        ],
+        Force::class => [
+            self::POUND_FORCE => 'lbf',
         ],
         Length::class => [
             self::CHAIN => 'chain',
@@ -116,12 +127,16 @@ class ImperialUnits extends SystemOfUnits
             self::YARD => 'yd',
         ],
         Mass::class => [
-            self::GRAIN => 'gr',
             self::LONG_HUNDREDWEIGHT => 'cwt',
-            self::LONG_TON => 'ton',
+            self::LONG_TON => 't',
             self::STONE => 'st',
             self::OUNCE => 'oz',
             self::POUND => 'lb',
+            self::DRAM => 'dr',
+            self::QUARTER => 'qr',
+        ],
+        Pressure::class => [
+            self::POUND_PER_SQUARE_INCH => 'lbf',
         ],
         Volume::class => [
             self::BUSHEL => 'bu',
@@ -190,6 +205,24 @@ class ImperialUnits extends SystemOfUnits
      *
      * @return Unit
      */
+    protected function buildForce($code, $symbol)
+    {
+        switch ($code) {
+            case self::POUND_FORCE:
+                return new TransformedUnit(
+                    $this->standardUnits->NEWTON,
+                    new RationalConverter(44482216152605, 10000000000000),
+                    $symbol
+                );
+        }
+    }
+
+    /**
+     * @param string $code
+     * @param string $symbol
+     *
+     * @return Unit
+     */
     protected function buildLength($code, $symbol)
     {
         switch ($code) {
@@ -229,18 +262,42 @@ class ImperialUnits extends SystemOfUnits
     protected function buildMass($code, $symbol)
     {
         switch ($code) {
-            case self::GRAIN:
-                return $this->standardUnits->GRAIN;
-            case self::LONG_HUNDREDWEIGHT:
-                return new TransformedUnit($this->POUND, new RationalConverter(112, 1), $symbol);
-            case self::LONG_TON:
-                return new TransformedUnit($this->LONG_HUNDREDWEIGHT, new RationalConverter(20, 1), $symbol);
+            case self::POUND:
+                return new TransformedUnit(
+                    $this->standardUnits->KILOGRAM,
+                    new RationalConverter(45359237, 100000000),
+                    $symbol
+                );
+            case self::DRAM:
+                return new TransformedUnit($this->OUNCE, new RationalConverter(1, 16), $symbol);
             case self::OUNCE:
                 return new TransformedUnit($this->POUND, new RationalConverter(1, 16), $symbol);
-            case self::POUND:
-                return new TransformedUnit($this->GRAIN, new RationalConverter(7000, 1), $symbol);
             case self::STONE:
                 return new TransformedUnit($this->POUND, new RationalConverter(14, 1), $symbol);
+            case self::QUARTER:
+                return new TransformedUnit($this->STONE, new RationalConverter(2, 1), $symbol);
+            case self::LONG_HUNDREDWEIGHT:
+                return new TransformedUnit($this->QUARTER, new RationalConverter(4, 1), $symbol);
+            case self::LONG_TON:
+                return new TransformedUnit($this->LONG_HUNDREDWEIGHT, new RationalConverter(20, 1), $symbol);
+        }
+    }
+
+    /**
+     * @param string $code
+     * @param string $symbol
+     *
+     * @return Unit
+     */
+    protected function buildPressure($code, $symbol)
+    {
+        switch ($code) {
+            case self::POUND_PER_SQUARE_INCH:
+                return new CompoundUnit(
+                    $this->POUND_FORCE->divide($this->SQUARE_INCH),
+                    Pressure::class,
+                    $symbol
+                );
         }
     }
 

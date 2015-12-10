@@ -56,11 +56,15 @@ class TroyUnits extends SystemOfUnits
     {
         switch ($code) {
             case self::GRAIN:
-                return $this->standardUnits->GRAIN;
-            case self::OUNCE:
-                return new TransformedUnit($this->PENNYWEIGHT, new RationalConverter(24, 1), $symbol);
+                return new TransformedUnit(
+                    $this->standardUnits->KILOGRAM,
+                    new RationalConverter(45359237, 100000000 * 7000),
+                    $symbol
+                );
             case self::PENNYWEIGHT:
                 return new TransformedUnit($this->GRAIN, new RationalConverter(24, 1), $symbol);
+            case self::OUNCE:
+                return new TransformedUnit($this->PENNYWEIGHT, new RationalConverter(24, 1), $symbol);
             case self::POUND:
                 return new TransformedUnit($this->OUNCE, new RationalConverter(12, 1), $symbol);
         }

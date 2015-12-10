@@ -60,15 +60,19 @@ class ApothecariesUnits extends SystemOfUnits
     {
         switch ($code) {
             case self::GRAIN:
-                return $this->standardUnits->GRAIN;
+                return new TransformedUnit(
+                    $this->standardUnits->KILOGRAM,
+                    new RationalConverter(45359237, 100000000 * 7000),
+                    $symbol
+                );
+            case self::SCRUPLE_APOTHECARY:
+                return new TransformedUnit($this->GRAIN, new RationalConverter(20, 1), $symbol);
             case self::DRAM_APOTHECARY:
                 return new TransformedUnit($this->SCRUPLE_APOTHECARY, new RationalConverter(3, 1), $symbol);
             case self::OUNCE_APOTHECARY:
                 return new TransformedUnit($this->DRAM_APOTHECARY, new RationalConverter(8, 1), $symbol);
             case self::POUND_APOTHECARY:
                 return new TransformedUnit($this->OUNCE_APOTHECARY, new RationalConverter(12, 1), $symbol);
-            case self::SCRUPLE_APOTHECARY:
-                return new TransformedUnit($this->GRAIN, new RationalConverter(20, 1), $symbol);
         }
     }
 }
