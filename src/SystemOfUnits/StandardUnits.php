@@ -54,167 +54,167 @@ use BinSoul\Common\Measurement\Unit\CompoundUnit;
 use BinSoul\Common\Measurement\Unit\TransformedUnit;
 
 /**
- * @property Unit $AMPERE                            unit of electric current
- * @property Unit $ACCELLERATION_OF_FREEFALL         unit of acceleration
- * @property Unit $ANGSTROM                          unit of length
- * @property Unit $ARE                               unit of area
- * @property Unit $ASTRONOMICAL_UNIT                 unit of length
- * @property Unit $ATMOSPHERE_STANDARD               unit of pressure
- * @property Unit $ATMOSPHERE_TECHNICAL              unit of pressure
- * @property Unit $ATOMIC_MASS                       unit of mass
- * @property Unit $AVOGADRO_CONSTANT                 unit of amount of substance
- * @property Unit $BAR                               unit of pressure
- * @property Unit $BASIS_POINT                       unit of ratio
- * @property Unit $BAUD                              unit of data rate
- * @property Unit $BECQUEREL                         unit of radioactive activity
- * @property Unit $BEL                               unit of level
- * @property Unit $BIT                               unit of data amount
- * @property Unit $BOLTZMAN_CONSTANT                 constant
- * @property Unit $BYTE                              unit of data amount
- * @property Unit $CALORIE_AT_15C                    unit of energy
- * @property Unit $CALORIE_AT_20C                    unit of energy
- * @property Unit $CALORIE_FOOD                      unit of energy
- * @property Unit $CALORIE_TABLE                     unit of energy
- * @property Unit $CALORIE_MEAN                      unit of energy
- * @property Unit $CALORIE_THERMOCHEMICAL            unit of energy
- * @property Unit $CANDELA                           unit of luminous intensity
- * @property Unit $CARAT_METRIC                      unit of mass
- * @property Unit $CELSIUS                           unit of temperature
- * @property Unit $CENTIMETRE                        unit of length
- * @property Unit $CENTIRADIAN                       unit of angle
- * @property Unit $COULOMB                           unit of electric charge
- * @property Unit $CUBIC_FOOT                        unit of volume
- * @property Unit $CUBIC_INCH                        unit of volume
- * @property Unit $CUBIC_METRE                       unit of volume
- * @property Unit $CUBIC_MILE                        unit of volume
- * @property Unit $CUBIC_YARD                        unit of volume
- * @property Unit $CURIE                             unit of radioactive activity
- * @property Unit $DAY                               unit of duration
- * @property Unit $DAY_SIDEREAL                      unit of duration
- * @property Unit $DECIBEL                           unit of level
- * @property Unit $DEGREE_ANGLE                      unit of angle
- * @property Unit $DRAM                              unit of mass
- * @property Unit $DYNE                              unit of force
- * @property Unit $ELECTRON_MASS                     unit of mass
- * @property Unit $ELECTRON_VOLT                     unit of energy
- * @property Unit $ELEMENTARY_CHARGE                 unit of electric charge
- * @property Unit $ERG                               unit of energy
- * @property Unit $FAHRENHEIT                        unit of temperature
- * @property Unit $FARAD                             unit of electric capacitance
- * @property Unit $FARADAY_CONSTANT                  unit of electric charge
- * @property Unit $FATHOM                            unit of length
- * @property Unit $FEET_PER_SECOND                   unit of velocity
- * @property Unit $FOOT                              unit of length
- * @property Unit $FRANKLIN                          unit of electric charge
- * @property Unit $GAUSS                             unit of magnetic flux density
- * @property Unit $GILBERT                           unit of electric current
- * @property Unit $GRADE                             unit of angle
- * @property Unit $GRAIN                             unit of mass
- * @property Unit $GRAM                              unit of mass
- * @property Unit $GRAM_FORCE                        unit of force
- * @property Unit $GRAVITY_CONSTANT                  unit of
- * @property Unit $GRAY                              unit of radiation dose absorbed
- * @property Unit $HECTARE                           unit of area
- * @property Unit $HENRY                             unit of electric inductance
- * @property Unit $HERTZ                             unit of frequency
- * @property Unit $HORSEPOWER_BOILER                 unit of power
- * @property Unit $HORSEPOWER_ELECTRIC               unit of power
- * @property Unit $HORSEPOWER_MECHANICAL             unit of power
- * @property Unit $HORSEPOWER_METRIC                 unit of power
- * @property Unit $HOUR                              unit of duration
- * @property Unit $INCH                              unit of length
- * @property Unit $INCH_OF_MERCURY                   unit of pressure
- * @property Unit $JOULE                             unit of energy
- * @property Unit $KATAL                             unit of catalytic activity
- * @property Unit $KELVIN                            unit of temperature
- * @property Unit $KILOGRAM                          unit of mass
- * @property Unit $KILOGRAM_FORCE                    unit of force
- * @property Unit $KILOJOULE                         unit of energy
- * @property Unit $KILOMETRE                         unit of length
- * @property Unit $KILOMETRES_PER_HOUR               unit of velocity
- * @property Unit $KNOT                              unit of velocity
- * @property Unit $LAMBERT                           unit of illuminance
- * @property Unit $LIGHT_YEAR                        unit of length
- * @property Unit $LINE                              unit of length
- * @property Unit $LITRE                             unit of volume
- * @property Unit $LUMEN                             unit of luminous flux
- * @property Unit $LUX                               unit of illuminance
- * @property Unit $MAXWELL                           unit of magnetic flux
- * @property Unit $METRE                             unit of length
- * @property Unit $METRES_PER_SECOND                 unit of velocity
- * @property Unit $METRES_PER_SQUARE_SECOND          unit of acceleration
- * @property Unit $MILE                              unit of length
- * @property Unit $MILES_PER_HOUR                    unit of velocity
- * @property Unit $MILLIGRAM                         unit of mass
- * @property Unit $MILLIMETRE                        unit of length
- * @property Unit $MILLIMETRE_OF_MERCURY             unit of pressure
- * @property Unit $MINUTE                            unit of duration
- * @property Unit $MINUTE_ANGLE                      unit of angle
- * @property Unit $MOLE                              unit of amount of substance
- * @property Unit $MONTH                             unit of duration
- * @property Unit $MONTH_GREGORIAN                   unit of duration
- * @property Unit $MONTH_JULIAN                      unit of duration
- * @property Unit $MONTH_SYNODAL                     unit of duration
- * @property Unit $NAUTICAL_MILE                     unit of length
- * @property Unit $NEPER                             unit of level
- * @property Unit $NEWTON                            unit of force
- * @property Unit $OHM                               unit of electric resistance
- * @property Unit $OUNCE                             unit of mass
- * @property Unit $PARSEC                            unit of length
- * @property Unit $PASCAL                            unit of pressure
- * @property Unit $PER_CENT_MILLE                    unit of ratio
- * @property Unit $PER_MILLE                         unit of ratio
- * @property Unit $PERCENT                           unit of ratio
- * @property Unit $PERMEABILITY_OF_VACUUM            unit of
- * @property Unit $PERMITTIVITY_OF_VACUUM            unit of
- * @property Unit $PI                                constant
- * @property Unit $PICA                              unit of length
- * @property Unit $PICA_PRINTER                      unit of length
- * @property Unit $PLANCK_CONSTANT                   unit of
- * @property Unit $POINT                             unit of length
- * @property Unit $POINT_PRINTER                     unit of length
- * @property Unit $POISE                             unit of dynamic viscosity
- * @property Unit $POUND                             unit of mass
- * @property Unit $POUND_FORCE                       unit of force
- * @property Unit $POUND_PER_SQUARE_INCH             unit of pressure
- * @property Unit $PROTON_MASS                       unit of mass
- * @property Unit $RAD                               unit of radiation dose absorbed
- * @property Unit $RADIAN                            unit of angle
- * @property Unit $RANKINE                           unit of temperature
- * @property Unit $REM                               unit of radiation dose effective
- * @property Unit $REVOLUTION                        unit of angle
- * @property Unit $RUTHERFORD                        unit of radioactive activity
- * @property Unit $SECOND                            unit of duration
- * @property Unit $SECOND_ANGLE                      unit of angle
- * @property Unit $SIEMENS                           unit of electric conductance
- * @property Unit $SIEVERT                           unit of radiation dose effective
- * @property Unit $SPEED_OF_LIGHT                    unit of velocity
- * @property Unit $SPHERE                            unit of solid angle
- * @property Unit $SQUARE_CENTIMETRE                 unit of area
- * @property Unit $SQUARE_FOOT                       unit of area
- * @property Unit $SQUARE_INCH                       unit of area
- * @property Unit $SQUARE_METRE                      unit of area
- * @property Unit $SQUARE_MILE                       unit of area
- * @property Unit $SQUARE_MILLIMETRE                 unit of area
- * @property Unit $SQUARE_YARD                       unit of area
- * @property Unit $STERADIAN                         unit of solid angle
- * @property Unit $STOKE                             unit of kinematic viscosity
- * @property Unit $TESLA                             unit of magnetic flux density
- * @property Unit $THOU                              unit of length
- * @property Unit $TONNE                             unit of mass
- * @property Unit $TORR                              unit of pressure
- * @property Unit $VOLT                              unit of electric potential
- * @property Unit $WATT                              unit of power
- * @property Unit $WEBER                             unit of magnetic flux
- * @property Unit $WEEK                              unit of duration
- * @property Unit $YARD                              unit of length
- * @property Unit $YEAR                              unit of duration
- * @property Unit $YEAR_CALENDAR                     unit of duration
- * @property Unit $YEAR_GREGORIAN                    unit of duration
- * @property Unit $YEAR_JULIAN                       unit of duration
- * @property Unit $YEAR_JULIEN                       unit of duration
- * @property Unit $YEAR_SIDEREAL                     unit of duration
- * @property Unit $YEAR_TROPICAL                     unit of duration
+ * @property Unit $AMPERE                    unit of electric current
+ * @property Unit $ACCELLERATION_OF_FREEFALL unit of acceleration
+ * @property Unit $ANGSTROM                  unit of length
+ * @property Unit $ARE                       unit of area
+ * @property Unit $ASTRONOMICAL_UNIT         unit of length
+ * @property Unit $ATMOSPHERE_STANDARD       unit of pressure
+ * @property Unit $ATMOSPHERE_TECHNICAL      unit of pressure
+ * @property Unit $ATOMIC_MASS               unit of mass
+ * @property Unit $AVOGADRO_CONSTANT         unit of amount of substance
+ * @property Unit $BAR                       unit of pressure
+ * @property Unit $BASIS_POINT               unit of ratio
+ * @property Unit $BAUD                      unit of data rate
+ * @property Unit $BECQUEREL                 unit of radioactive activity
+ * @property Unit $BEL                       unit of level
+ * @property Unit $BIT                       unit of data amount
+ * @property Unit $BOLTZMAN_CONSTANT         constant
+ * @property Unit $BYTE                      unit of data amount
+ * @property Unit $CALORIE_AT_15C            unit of energy
+ * @property Unit $CALORIE_AT_20C            unit of energy
+ * @property Unit $CALORIE_FOOD              unit of energy
+ * @property Unit $CALORIE_TABLE             unit of energy
+ * @property Unit $CALORIE_MEAN              unit of energy
+ * @property Unit $CALORIE_THERMOCHEMICAL    unit of energy
+ * @property Unit $CANDELA                   unit of luminous intensity
+ * @property Unit $CARAT_METRIC              unit of mass
+ * @property Unit $CELSIUS                   unit of temperature
+ * @property Unit $CENTIMETRE                unit of length
+ * @property Unit $CENTIRADIAN               unit of angle
+ * @property Unit $COULOMB                   unit of electric charge
+ * @property Unit $CUBIC_FOOT                unit of volume
+ * @property Unit $CUBIC_INCH                unit of volume
+ * @property Unit $CUBIC_METRE               unit of volume
+ * @property Unit $CUBIC_MILE                unit of volume
+ * @property Unit $CUBIC_YARD                unit of volume
+ * @property Unit $CURIE                     unit of radioactive activity
+ * @property Unit $DAY                       unit of duration
+ * @property Unit $DAY_SIDEREAL              unit of duration
+ * @property Unit $DECIBEL                   unit of level
+ * @property Unit $DEGREE_ANGLE              unit of angle
+ * @property Unit $DRAM                      unit of mass
+ * @property Unit $DYNE                      unit of force
+ * @property Unit $ELECTRON_MASS             unit of mass
+ * @property Unit $ELECTRON_VOLT             unit of energy
+ * @property Unit $ELEMENTARY_CHARGE         unit of electric charge
+ * @property Unit $ERG                       unit of energy
+ * @property Unit $FAHRENHEIT                unit of temperature
+ * @property Unit $FARAD                     unit of electric capacitance
+ * @property Unit $FARADAY_CONSTANT          unit of electric charge
+ * @property Unit $FATHOM                    unit of length
+ * @property Unit $FEET_PER_SECOND           unit of velocity
+ * @property Unit $FOOT                      unit of length
+ * @property Unit $FRANKLIN                  unit of electric charge
+ * @property Unit $GAUSS                     unit of magnetic flux density
+ * @property Unit $GILBERT                   unit of electric current
+ * @property Unit $GRADE                     unit of angle
+ * @property Unit $GRAIN                     unit of mass
+ * @property Unit $GRAM                      unit of mass
+ * @property Unit $GRAM_FORCE                unit of force
+ * @property Unit $GRAVITY_CONSTANT          unit of
+ * @property Unit $GRAY                      unit of radiation dose absorbed
+ * @property Unit $HECTARE                   unit of area
+ * @property Unit $HENRY                     unit of electric inductance
+ * @property Unit $HERTZ                     unit of frequency
+ * @property Unit $HORSEPOWER_BOILER         unit of power
+ * @property Unit $HORSEPOWER_ELECTRIC       unit of power
+ * @property Unit $HORSEPOWER_MECHANICAL     unit of power
+ * @property Unit $HORSEPOWER_METRIC         unit of power
+ * @property Unit $HOUR                      unit of duration
+ * @property Unit $INCH                      unit of length
+ * @property Unit $INCH_OF_MERCURY           unit of pressure
+ * @property Unit $JOULE                     unit of energy
+ * @property Unit $KATAL                     unit of catalytic activity
+ * @property Unit $KELVIN                    unit of temperature
+ * @property Unit $KILOGRAM                  unit of mass
+ * @property Unit $KILOGRAM_FORCE            unit of force
+ * @property Unit $KILOJOULE                 unit of energy
+ * @property Unit $KILOMETRE                 unit of length
+ * @property Unit $KILOMETRES_PER_HOUR       unit of velocity
+ * @property Unit $KNOT                      unit of velocity
+ * @property Unit $LAMBERT                   unit of illuminance
+ * @property Unit $LIGHT_YEAR                unit of length
+ * @property Unit $LINE                      unit of length
+ * @property Unit $LITRE                     unit of volume
+ * @property Unit $LUMEN                     unit of luminous flux
+ * @property Unit $LUX                       unit of illuminance
+ * @property Unit $MAXWELL                   unit of magnetic flux
+ * @property Unit $METRE                     unit of length
+ * @property Unit $METRES_PER_SECOND         unit of velocity
+ * @property Unit $METRES_PER_SQUARE_SECOND  unit of acceleration
+ * @property Unit $MILE                      unit of length
+ * @property Unit $MILES_PER_HOUR            unit of velocity
+ * @property Unit $MILLIGRAM                 unit of mass
+ * @property Unit $MILLIMETRE                unit of length
+ * @property Unit $MILLIMETRE_OF_MERCURY     unit of pressure
+ * @property Unit $MINUTE                    unit of duration
+ * @property Unit $MINUTE_ANGLE              unit of angle
+ * @property Unit $MOLE                      unit of amount of substance
+ * @property Unit $MONTH                     unit of duration
+ * @property Unit $MONTH_GREGORIAN           unit of duration
+ * @property Unit $MONTH_JULIAN              unit of duration
+ * @property Unit $MONTH_SYNODAL             unit of duration
+ * @property Unit $NAUTICAL_MILE             unit of length
+ * @property Unit $NEPER                     unit of level
+ * @property Unit $NEWTON                    unit of force
+ * @property Unit $OHM                       unit of electric resistance
+ * @property Unit $OUNCE                     unit of mass
+ * @property Unit $PARSEC                    unit of length
+ * @property Unit $PASCAL                    unit of pressure
+ * @property Unit $PER_CENT_MILLE            unit of ratio
+ * @property Unit $PER_MILLE                 unit of ratio
+ * @property Unit $PERCENT                   unit of ratio
+ * @property Unit $PERMEABILITY_OF_VACUUM    unit of
+ * @property Unit $PERMITTIVITY_OF_VACUUM    unit of
+ * @property Unit $PI                        constant
+ * @property Unit $PICA                      unit of length
+ * @property Unit $PICA_PRINTER              unit of length
+ * @property Unit $PLANCK_CONSTANT           unit of
+ * @property Unit $POINT                     unit of length
+ * @property Unit $POINT_PRINTER             unit of length
+ * @property Unit $POISE                     unit of dynamic viscosity
+ * @property Unit $POUND                     unit of mass
+ * @property Unit $POUND_FORCE               unit of force
+ * @property Unit $POUND_PER_SQUARE_INCH     unit of pressure
+ * @property Unit $PROTON_MASS               unit of mass
+ * @property Unit $RAD                       unit of radiation dose absorbed
+ * @property Unit $RADIAN                    unit of angle
+ * @property Unit $RANKINE                   unit of temperature
+ * @property Unit $REM                       unit of radiation dose effective
+ * @property Unit $REVOLUTION                unit of angle
+ * @property Unit $RUTHERFORD                unit of radioactive activity
+ * @property Unit $SECOND                    unit of duration
+ * @property Unit $SECOND_ANGLE              unit of angle
+ * @property Unit $SIEMENS                   unit of electric conductance
+ * @property Unit $SIEVERT                   unit of radiation dose effective
+ * @property Unit $SPEED_OF_LIGHT            unit of velocity
+ * @property Unit $SPHERE                    unit of solid angle
+ * @property Unit $SQUARE_CENTIMETRE         unit of area
+ * @property Unit $SQUARE_FOOT               unit of area
+ * @property Unit $SQUARE_INCH               unit of area
+ * @property Unit $SQUARE_METRE              unit of area
+ * @property Unit $SQUARE_MILE               unit of area
+ * @property Unit $SQUARE_MILLIMETRE         unit of area
+ * @property Unit $SQUARE_YARD               unit of area
+ * @property Unit $STERADIAN                 unit of solid angle
+ * @property Unit $STOKE                     unit of kinematic viscosity
+ * @property Unit $TESLA                     unit of magnetic flux density
+ * @property Unit $THOU                      unit of length
+ * @property Unit $TONNE                     unit of mass
+ * @property Unit $TORR                      unit of pressure
+ * @property Unit $VOLT                      unit of electric potential
+ * @property Unit $WATT                      unit of power
+ * @property Unit $WEBER                     unit of magnetic flux
+ * @property Unit $WEEK                      unit of duration
+ * @property Unit $YARD                      unit of length
+ * @property Unit $YEAR                      unit of duration
+ * @property Unit $YEAR_CALENDAR             unit of duration
+ * @property Unit $YEAR_GREGORIAN            unit of duration
+ * @property Unit $YEAR_JULIAN               unit of duration
+ * @property Unit $YEAR_JULIEN               unit of duration
+ * @property Unit $YEAR_SIDEREAL             unit of duration
+ * @property Unit $YEAR_TROPICAL             unit of duration
  */
 class StandardUnits extends SystemOfUnits
 {

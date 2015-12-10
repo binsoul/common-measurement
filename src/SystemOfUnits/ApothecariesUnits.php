@@ -12,11 +12,11 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * The apothecaries' system of weights is a historical system of mass units that were used by
  * physicians and apothecaries for medical recipes.
  *
- * @property Unit $GRAIN unit of mass
- * @property Unit $DRAM_APOTHECARY                              unit of mass
- * @property Unit $OUNCE_APOTHECARY                             unit of mass
- * @property Unit $POUND_APOTHECARY                             unit of mass
- * @property Unit $SCRUPLE_APOTHECARY                           unit of mass
+ * @property Unit $GRAIN              unit of mass
+ * @property Unit $DRAM_APOTHECARY    unit of mass
+ * @property Unit $OUNCE_APOTHECARY   unit of mass
+ * @property Unit $POUND_APOTHECARY   unit of mass
+ * @property Unit $SCRUPLE_APOTHECARY unit of mass
  */
 class ApothecariesUnits extends SystemOfUnits
 {

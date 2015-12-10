@@ -14,48 +14,48 @@ use BinSoul\Common\Measurement\Unit\CompoundUnit;
 use BinSoul\Common\Measurement\Unit\TransformedUnit;
 
 /**
- * @property Unit $ACRE                            unit of area
- * @property Unit $BARREL                          unit of volume
- * @property Unit $BUSHEL                          unit of volume
- * @property Unit $CHAIN                           unit of length
- * @property Unit $CORD                            unit of volume
- * @property Unit $CUP                             unit of volume
- * @property Unit $DRY_PINT                        unit of volume
- * @property Unit $DRY_QUART                       unit of volume
- * @property Unit $FATHOM                          unit of length
- * @property Unit $FLUID_DRAM                      unit of volume
- * @property Unit $FLUID_OUNCE                     unit of volume
- * @property Unit $FOOT                            unit of length
- * @property Unit $FURLONG                         unit of length
- * @property Unit $GALLON                          unit of volume
- * @property Unit $GILL                            unit of volume
- * @property Unit $INCH                            unit of length
- * @property Unit $LINK                            unit of length
- * @property Unit $MILE                            unit of length
- * @property Unit $MINIM                           unit of volume
- * @property Unit $PECK                            unit of volume
- * @property Unit $PINT                            unit of volume
- * @property Unit $QUART                           unit of volume
- * @property Unit $ROD                             unit of length
- * @property Unit $SECTION                         unit of area
- * @property Unit $SHORT_HUNDREDWEIGHT                unit of mass
- * @property Unit $SHORT_TON                          unit of mass
- * @property Unit $SQUARE_MILE                     unit of area
- * @property Unit $SQUARE_ROD                      unit of area
- * @property Unit $SQUARE_FOOT                     unit of area
- * @property Unit $SQUARE_INCH                     unit of area
- * @property Unit $SQUARE_YARD                     unit of area
- * @property Unit $TABLESPOON                      unit of volume
- * @property Unit $TEASPOON                        unit of volume
- * @property Unit $THOU                            unit of length
- * @property Unit $TOWNSHIP                        unit of area
- * @property Unit $YARD                            unit of length
- * @property Unit $FEET_PER_SECOND                 unit of velocity
- * @property Unit $MILES_PER_HOUR                  unit of velocity
- * @property Unit $CUBIC_FOOT                      unit of volume
- * @property Unit $CUBIC_INCH                      unit of volume
- * @property Unit $CUBIC_MILE                      unit of volume
- * @property Unit $CUBIC_YARD                      unit of volume
+ * @property Unit $ACRE                unit of area
+ * @property Unit $BARREL              unit of volume
+ * @property Unit $BUSHEL              unit of volume
+ * @property Unit $CHAIN               unit of length
+ * @property Unit $CORD                unit of volume
+ * @property Unit $CUP                 unit of volume
+ * @property Unit $DRY_PINT            unit of volume
+ * @property Unit $DRY_QUART           unit of volume
+ * @property Unit $FATHOM              unit of length
+ * @property Unit $FLUID_DRAM          unit of volume
+ * @property Unit $FLUID_OUNCE         unit of volume
+ * @property Unit $FOOT                unit of length
+ * @property Unit $FURLONG             unit of length
+ * @property Unit $GALLON              unit of volume
+ * @property Unit $GILL                unit of volume
+ * @property Unit $INCH                unit of length
+ * @property Unit $LINK                unit of length
+ * @property Unit $MILE                unit of length
+ * @property Unit $MINIM               unit of volume
+ * @property Unit $PECK                unit of volume
+ * @property Unit $PINT                unit of volume
+ * @property Unit $QUART               unit of volume
+ * @property Unit $ROD                 unit of length
+ * @property Unit $SECTION             unit of area
+ * @property Unit $SHORT_HUNDREDWEIGHT unit of mass
+ * @property Unit $SHORT_TON           unit of mass
+ * @property Unit $SQUARE_MILE         unit of area
+ * @property Unit $SQUARE_ROD          unit of area
+ * @property Unit $SQUARE_FOOT         unit of area
+ * @property Unit $SQUARE_INCH         unit of area
+ * @property Unit $SQUARE_YARD         unit of area
+ * @property Unit $TABLESPOON          unit of volume
+ * @property Unit $TEASPOON            unit of volume
+ * @property Unit $THOU                unit of length
+ * @property Unit $TOWNSHIP            unit of area
+ * @property Unit $YARD                unit of length
+ * @property Unit $FEET_PER_SECOND     unit of velocity
+ * @property Unit $MILES_PER_HOUR      unit of velocity
+ * @property Unit $CUBIC_FOOT          unit of volume
+ * @property Unit $CUBIC_INCH          unit of volume
+ * @property Unit $CUBIC_MILE          unit of volume
+ * @property Unit $CUBIC_YARD          unit of volume
  */
 class USCustomaryUnits extends SystemOfUnits
 {
@@ -288,6 +288,22 @@ class USCustomaryUnits extends SystemOfUnits
                 return new TransformedUnit($this->FLUID_OUNCE, new RationalConverter(1, 2), $symbol);
             case self::TEASPOON:
                 return new TransformedUnit($this->TABLESPOON, new RationalConverter(1, 3), $symbol);
+        }
+    }
+
+    /**
+     * @param string $code
+     * @param string $symbol
+     *
+     * @return Unit
+     */
+    protected function buildMass($code, $symbol)
+    {
+        switch ($code) {
+            case self::SHORT_HUNDREDWEIGHT:
+                return new TransformedUnit($this->standardUnits->POUND, new RationalConverter(100, 1), $symbol);
+            case self::SHORT_TON:
+                return new TransformedUnit($this->SHORT_HUNDREDWEIGHT, new RationalConverter(20, 1), $symbol);
         }
     }
 

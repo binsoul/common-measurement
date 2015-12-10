@@ -1,19 +1,24 @@
 <?php
 
-namespace BinSoul\Test\Common\Measure;
+namespace BinSoul\Test\Common\Measurement\SystemOfUnits;
 
-use BinSoul\Common\Measurement\SystemOfUnits\StandardUnits;
+use BinSoul\Common\Measurement\SystemOfUnits;
 use BinSoul\Common\Measurement\Unit;
 use BinSoul\Common\Measurement\Converter;
 
-class StandardUnitsTest extends \PHPUnit_Framework_TestCase
+abstract class SystemOfUnitsTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @return SystemOfUnits
+     */
+    abstract protected function buildUnits();
+
     public function test_can_build_all_units()
     {
-        $units = new StandardUnits();
+        $units = $this->buildUnits();
 
         foreach ($units->getUnits() as $code) {
-            $units = new StandardUnits();
+            $units = $this->buildUnits();
             $unit = $units->build($code);
             $this->assertInstanceOf(Unit::class, $unit, $code);
             $this->assertNotEmpty($unit->getQuantity(), $code);

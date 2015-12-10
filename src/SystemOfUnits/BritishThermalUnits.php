@@ -9,13 +9,13 @@ use BinSoul\Common\Measurement\Unit;
 use BinSoul\Common\Measurement\Unit\TransformedUnit;
 
 /**
- * @property Unit $BTU_AT_39F                        unit of energy
- * @property Unit $BTU_AT_59F                        unit of energy
- * @property Unit $BTU_AT_60F                        unit of energy
- * @property Unit $BTU_IT                         unit of energy
- * @property Unit $BTU_MEAN                          unit of energy
- * @property Unit $BTU_THERMOCHEMICAL                unit of energy
- * @property Unit $BTU_ISO                unit of energy
+ * @property Unit $BTU_AT_39F         unit of energy
+ * @property Unit $BTU_AT_59F         unit of energy
+ * @property Unit $BTU_AT_60F         unit of energy
+ * @property Unit $BTU_IT             unit of energy
+ * @property Unit $BTU_MEAN           unit of energy
+ * @property Unit $BTU_THERMOCHEMICAL unit of energy
+ * @property Unit $BTU_ISO            unit of energy
  */
 class BritishThermalUnits extends SystemOfUnits
 {

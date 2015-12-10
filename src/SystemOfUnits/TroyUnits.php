@@ -11,10 +11,10 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
 /**
  * Troy weight is a system of units of mass customarily used for precious metals and gemstones.
  *
- * @property Unit $GRAIN unit of mass
- * @property Unit $OUNCE                                   unit of mass
- * @property Unit $PENNYWEIGHT                             unit of mass
- * @property Unit $POUND                                   unit of mass
+ * @property Unit $GRAIN       unit of mass
+ * @property Unit $OUNCE       unit of mass
+ * @property Unit $PENNYWEIGHT unit of mass
+ * @property Unit $POUND       unit of mass
  */
 class TroyUnits extends SystemOfUnits
 {
