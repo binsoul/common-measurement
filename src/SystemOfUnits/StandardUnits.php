@@ -133,6 +133,7 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $METRES_PER_SECOND         unit of velocity
  * @property Unit $METRES_PER_SQUARE_SECOND  unit of acceleration
  * @property Unit $MILLIGRAM                 unit of mass
+ * @property Unit $MILLILITRE                unit of volume
  * @property Unit $MILLIMETRE                unit of length
  * @property Unit $MILLIMETRE_OF_MERCURY     unit of pressure
  * @property Unit $MINUTE                    unit of duration
@@ -171,6 +172,7 @@ use BinSoul\Common\Measurement\Unit\TransformedUnit;
  * @property Unit $SPEED_OF_LIGHT            unit of velocity
  * @property Unit $SPHERE                    unit of solid angle
  * @property Unit $SQUARE_CENTIMETRE         unit of area
+ * @property Unit $SQUARE_KILOMETRE          unit of area
  * @property Unit $SQUARE_METRE              unit of area
  * @property Unit $SQUARE_MILLIMETRE         unit of area
  * @property Unit $STERADIAN                 unit of solid angle
@@ -272,6 +274,7 @@ class StandardUnits extends SystemOfUnits
     const METRES_PER_SECOND = 'METRES_PER_SECOND';
     const METRES_PER_SQUARE_SECOND = 'METRES_PER_SQUARE_SECOND';
     const MILLIGRAM = 'MILLIGRAM';
+    const MILLILITRE = 'MILLILITRE';
     const MILLIMETRE = 'MILLIMETRE';
     const MILLIMETRE_OF_MERCURY = 'MILLIMETRE_OF_MERCURY';
     const MINUTE = 'MINUTE';
@@ -309,6 +312,7 @@ class StandardUnits extends SystemOfUnits
     const SPEED_OF_LIGHT = 'SPEED_OF_LIGHT';
     const SPHERE = 'SPHERE';
     const SQUARE_CENTIMETRE = 'SQUARE_CENTIMETRE';
+    const SQUARE_KILOMETRE = 'SQUARE_KILOMETRE';
     const SQUARE_METRE = 'SQUARE_METRE';
     const SQUARE_MILLIMETRE = 'SQUARE_MILLIMETRE';
     const STERADIAN = 'STERADIAN';
@@ -341,6 +345,7 @@ class StandardUnits extends SystemOfUnits
             self::ARE => 'a',
             self::HECTARE => 'a*100',
             self::SQUARE_CENTIMETRE => 'cm²',
+            self::SQUARE_KILOMETRE => 'km²',
             self::SQUARE_METRE => 'm²',
             self::SQUARE_MILLIMETRE => 'mm²',
         ],
@@ -377,6 +382,7 @@ class StandardUnits extends SystemOfUnits
         Volume::class => [
             self::CUBIC_METRE => 'm³',
             self::LITRE => 'l',
+            self::MILLILITRE => 'ml',
         ],
         DataRate::class => [
             self::BAUD => 'Bd',
@@ -595,6 +601,8 @@ class StandardUnits extends SystemOfUnits
                 return new TransformedUnit($this->ARE, new RationalConverter(100, 1), $symbol);
             case self::SQUARE_CENTIMETRE:
                 return new CompoundUnit($this->CENTIMETRE->pow(2), Area::class, $symbol);
+            case self::SQUARE_KILOMETRE:
+                return new CompoundUnit($this->KILOMETRE->pow(2), Area::class, $symbol);
             case self::SQUARE_METRE:
                 return new CompoundUnit($this->METRE->pow(2), Area::class, $symbol);
             case self::SQUARE_MILLIMETRE:
@@ -711,6 +719,8 @@ class StandardUnits extends SystemOfUnits
                 return new CompoundUnit($this->METRE->pow(3), Volume::class, $symbol);
             case self::LITRE:
                 return new TransformedUnit($this->CUBIC_METRE, new RationalConverter(1, 1000), $symbol);
+            case self::MILLILITRE:
+                return new TransformedUnit($this->LITRE, new RationalConverter(1, 1000), $symbol);
         }
     }
 
