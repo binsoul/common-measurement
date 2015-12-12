@@ -27,6 +27,17 @@ abstract class SystemOfUnitsTest extends \PHPUnit_Framework_TestCase
             $this->assertInstanceOf(Converter::class, $unit->toStandardUnit(), $code);
             $this->assertNotEmpty($unit->getBaseUnits()->getSymbol(), $code);
             $this->assertInstanceOf(Converter::class, $unit->toBaseUnits(), $code);
+
+            $this->assertSame($unit, $units->build($code));
         }
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function test_throws_exception_for_invalid_unit()
+    {
+        $units = $this->buildUnits();
+        $units->build('foobar');
     }
 }
