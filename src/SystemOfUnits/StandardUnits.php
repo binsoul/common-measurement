@@ -622,13 +622,13 @@ class StandardUnits extends SystemOfUnits
             case self::ANGSTROM:
                 return new TransformedUnit($this->METRE, new RationalConverter(1, 10000000000), $symbol);
             case self::ASTRONOMICAL_UNIT:
-                return new TransformedUnit($this->METRE, new MultiplyConverter(1.49597870691E11), $symbol);
+                return new TransformedUnit($this->METRE, new RationalConverter(149597870691, 1), $symbol);
             case self::CENTIMETRE:
                 return new TransformedUnit($this->METRE, new RationalConverter(1, 100), $symbol);
             case self::KILOMETRE:
                 return new TransformedUnit($this->METRE, new RationalConverter(1000, 1), $symbol);
             case self::LIGHT_YEAR:
-                return new TransformedUnit($this->METRE, new MultiplyConverter(9.460528405E15), $symbol);
+                return new TransformedUnit($this->METRE, new RationalConverter(9.460528405E15, 1), $symbol);
             case self::METRE:
                 return new BaseUnit($symbol, Length::class, new Dimension('L'));
             case self::MILLIMETRE:
@@ -636,7 +636,7 @@ class StandardUnits extends SystemOfUnits
             case self::NAUTICAL_MILE:
                 return new TransformedUnit($this->METRE, new RationalConverter(1852, 1), $symbol);
             case self::PARSEC:
-                return new TransformedUnit($this->METRE, new MultiplyConverter(3.085677E16), $symbol);
+                return new TransformedUnit($this->METRE, new RationalConverter(3.085677E16, 1), $symbol);
         }
     }
 
@@ -650,7 +650,7 @@ class StandardUnits extends SystemOfUnits
     {
         switch ($code) {
             case self::ATMOSPHERE_STANDARD:
-                return new TransformedUnit($this->PASCAL, new RationalConverter(1.01325E5, 1), $symbol);
+                return new TransformedUnit($this->PASCAL, new RationalConverter(101325, 1), $symbol);
             case self::ATMOSPHERE_TECHNICAL:
                 return new CompoundUnit(
                     $this->KILOGRAM_FORCE->divide($this->SQUARE_CENTIMETRE),
@@ -660,9 +660,9 @@ class StandardUnits extends SystemOfUnits
             case self::BAR:
                 return new TransformedUnit($this->PASCAL, new RationalConverter(100000, 1), $symbol);
             case self::INCH_OF_MERCURY:
-                return new TransformedUnit($this->PASCAL, new MultiplyConverter(3386.388), $symbol);
+                return new TransformedUnit($this->PASCAL, new RationalConverter(3386388, 1000), $symbol);
             case self::MILLIMETRE_OF_MERCURY:
-                return new TransformedUnit($this->PASCAL, new MultiplyConverter(133.322), $symbol);
+                return new TransformedUnit($this->PASCAL, new RationalConverter(133322, 1000), $symbol);
             case self::PASCAL:
                 return new AlternateUnit($this->NEWTON->divide($this->SQUARE_METRE), $symbol, Pressure::class);
             case self::TORR:
@@ -1005,7 +1005,7 @@ class StandardUnits extends SystemOfUnits
             case self::DAY:
                 return new TransformedUnit($this->HOUR, new RationalConverter(24, 1), $symbol);
             case self::DAY_SIDEREAL:
-                return new TransformedUnit($this->SECOND, new MultiplyConverter(86164.09), $symbol);
+                return new TransformedUnit($this->SECOND, new RationalConverter(8616409, 100), $symbol);
             case self::HOUR:
                 return new TransformedUnit($this->MINUTE, new RationalConverter(60, 1), $symbol);
             case self::MINUTE:
@@ -1017,7 +1017,7 @@ class StandardUnits extends SystemOfUnits
             case self::MONTH_JULIAN:
                 return new TransformedUnit($this->YEAR_JULIAN, new RationalConverter(1, 12), $symbol);
             case self::MONTH_SYNODAL:
-                return new TransformedUnit($this->DAY, new MultiplyConverter(29.53059), $symbol);
+                return new TransformedUnit($this->DAY, new RationalConverter(2953059, 10000), $symbol);
             case self::SECOND:
                 return new BaseUnit($symbol, Duration::class, new Dimension('T'));
             case self::WEEK:
@@ -1025,17 +1025,17 @@ class StandardUnits extends SystemOfUnits
             case self::YEAR_CALENDAR:
                 return new TransformedUnit($this->DAY, new RationalConverter(365, 1), $symbol);
             case self::YEAR_GREGORIAN:
-                return new TransformedUnit($this->DAY, new MultiplyConverter(365.2425), $symbol);
+                return new TransformedUnit($this->DAY, new RationalConverter(3652425, 10000), $symbol);
             case self::YEAR_JULIAN:
-                return new TransformedUnit($this->DAY, new MultiplyConverter(365.25), $symbol);
+                return new TransformedUnit($this->DAY, new RationalConverter(36525, 100), $symbol);
             case self::YEAR_JULIEN:
                 return new TransformedUnit($this->SECOND, new RationalConverter(31557600, 1), $symbol);
             case self::YEAR_SIDEREAL:
-                return new TransformedUnit($this->SECOND, new MultiplyConverter(3.155814954E7), $symbol);
+                return new TransformedUnit($this->SECOND, new RationalConverter(3155814954, 100), $symbol);
             case self::YEAR_TROPICAL:
-                return new TransformedUnit($this->DAY, new MultiplyConverter(365.24219), $symbol);
+                return new TransformedUnit($this->DAY, new RationalConverter(36524219, 100000), $symbol);
             case self::YEAR:
-                return new TransformedUnit($this->DAY, new MultiplyConverter(365.25), 'a');
+                return new TransformedUnit($this->DAY, new RationalConverter(36525, 100), 'a');
         }
     }
 
@@ -1211,13 +1211,13 @@ class StandardUnits extends SystemOfUnits
     {
         switch ($code) {
             case self::HORSEPOWER_BOILER:
-                return new TransformedUnit($this->WATT, new MultiplyConverter(9812.5), $symbol);
+                return new TransformedUnit($this->WATT, new RationalConverter(98125, 10), $symbol);
             case self::HORSEPOWER_ELECTRIC:
-                return new TransformedUnit($this->WATT, new MultiplyConverter(746), $symbol);
+                return new TransformedUnit($this->WATT, new RationalConverter(746, 1), $symbol);
             case self::HORSEPOWER_MECHANICAL:
                 return new TransformedUnit($this->WATT, new MultiplyConverter(745.69987158227), $symbol);
             case self::HORSEPOWER_METRIC:
-                return new TransformedUnit($this->WATT, new MultiplyConverter(735.49875), $symbol);
+                return new TransformedUnit($this->WATT, new RationalConverter(73549875, 100000), $symbol);
             case self::WATT:
                 return new AlternateUnit($this->JOULE->divide($this->SECOND), $symbol, Power::class);
         }
