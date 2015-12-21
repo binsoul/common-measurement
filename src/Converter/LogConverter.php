@@ -25,6 +25,11 @@ class LogConverter extends Converter
         $this->logBase = log($base);
     }
 
+    /**
+     * Returns the base.
+     *
+     * @return float
+     */
     public function getBase()
     {
         return $this->base;

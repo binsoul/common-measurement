@@ -45,9 +45,14 @@ use BinSoul\Common\Measurement\Quantity\Velocity;
 use BinSoul\Common\Measurement\Quantity\Volume;
 use BinSoul\Common\Measurement\Unit;
 
+/**
+ * Builds measures implementing a concrete quantity interface.
+ */
 abstract class MeasureBuilder
 {
     /**
+     * Build a measure with the given value and the given unit.
+     *
      * @param float $value
      * @param Unit  $unit
      *
@@ -136,6 +141,10 @@ abstract class MeasureBuilder
                 return new VelocityMeasure($value, $unit);
             case Volume::class:
                 return new VolumeMeasure($value, $unit);
+            default:
+                throw new \InvalidArgumentException(
+                    sprintf('Unknown quantity "%s" for unit "%s".', get_class($unit->getQuantity()), $unit->getSymbol())
+                );
         }
     }
 }

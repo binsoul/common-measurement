@@ -26,6 +26,11 @@ class AddConverter extends Converter
         $this->offset = $offset;
     }
 
+    /**
+     * Returns the offset.
+     *
+     * @return float
+     */
     public function getOffset()
     {
         return $this->offset;

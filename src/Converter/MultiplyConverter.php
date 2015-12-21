@@ -26,6 +26,11 @@ class MultiplyConverter extends Converter
         $this->factor = $factor;
     }
 
+    /**
+     * Returns the factor.
+     *
+     * @return float
+     */
     public function getFactor()
     {
         return $this->factor;

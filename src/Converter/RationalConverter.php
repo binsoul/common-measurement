@@ -39,6 +39,8 @@ class RationalConverter extends Converter
     }
 
     /**
+     * Returns the dividend.
+     *
      * @return int
      */
     public function getDividend()
@@ -47,6 +49,8 @@ class RationalConverter extends Converter
     }
 
     /**
+     * Returns the divisor.
+     *
      * @return int
      */
     public function getDivisor()
