@@ -23,7 +23,7 @@ class Dimension
     public function __construct($symbol)
     {
         if (!is_object($symbol)) {
-            $this->unit = new BaseUnit('['.$symbol.']', Dimensionless::class, new self(SystemOfUnits::ONE()));
+            $this->unit = new BaseUnit($symbol, Dimensionless::class, new self(SystemOfUnits::ONE()));
         } else {
             $this->unit = $symbol;
         }
