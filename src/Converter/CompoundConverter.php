@@ -26,6 +26,26 @@ class CompoundConverter extends Converter
         $this->second = $second;
     }
 
+    /**
+     * Returns the first converter.
+     *
+     * @return Converter
+     */
+    public function getFirst()
+    {
+        return $this->first;
+    }
+
+    /**
+     * Returns the second converter.
+     *
+     * @return Converter
+     */
+    public function getSecond()
+    {
+        return $this->second;
+    }
+
     public function isLinear()
     {
         return $this->first->isLinear() && $this->second->isLinear();
@@ -43,10 +63,6 @@ class CompoundConverter extends Converter
 
     public function equals(Converter $that)
     {
-        if ($this == $that) {
-            return true;
-        }
-
         if (!($that instanceof self)) {
             return false;
         }

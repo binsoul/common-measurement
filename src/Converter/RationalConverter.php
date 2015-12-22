@@ -23,15 +23,15 @@ class RationalConverter extends Converter
     public function __construct($dividend, $divisor)
     {
         if ($dividend <= 0) {
-            throw new \InvalidArgumentException('Negative or zero dividend.');
+            throw new \InvalidArgumentException('Expected a dividend greater than zero.');
         }
 
         if ($divisor <= 0) {
-            throw new \InvalidArgumentException('Negative or zero divisor.');
+            throw new \InvalidArgumentException('Expected a divisor greater than zero.');
         }
 
         if ($dividend == $divisor) {
-            throw new \InvalidArgumentException('Would result in identity converter');
+            throw new \InvalidArgumentException('Expected a dividend not equal to the divisor.');
         }
 
         $this->dividend = $dividend;
@@ -91,10 +91,6 @@ class RationalConverter extends Converter
 
     public function inverse()
     {
-        if ($this->dividend < 0) {
-            return new self(-$this->divisor, -$this->dividend);
-        }
-
         return new self($this->divisor, $this->dividend);
     }
 
@@ -113,11 +109,9 @@ class RationalConverter extends Converter
             return '*('.$this->dividend.'/'.$this->divisor.')';
         } elseif ($this->dividend != 1) {
             return '*'.$this->dividend;
-        } elseif ($this->divisor != 1) {
+        } else {
             return '/'.$this->divisor;
-        };
-
-        return '';
+        }
     }
 
     /**

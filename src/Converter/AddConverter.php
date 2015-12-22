@@ -73,6 +73,10 @@ class AddConverter extends Converter
 
     public function __toString()
     {
-        return '+'.$this->offset;
+        if ($this->offset < 0) {
+            return (string) $this->offset;
+        }
+
+        return '+'.(string) $this->offset;
     }
 }

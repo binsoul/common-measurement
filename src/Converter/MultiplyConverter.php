@@ -20,7 +20,11 @@ class MultiplyConverter extends Converter
     public function __construct($factor)
     {
         if ($factor == 1.0) {
-            throw new \InvalidArgumentException('Would result in identity converter');
+            throw new \InvalidArgumentException('Expected a factor other than one.');
+        }
+
+        if ($factor == 0.0) {
+            throw new \InvalidArgumentException('Expected a factor other than zero.');
         }
 
         $this->factor = $factor;
@@ -73,6 +77,10 @@ class MultiplyConverter extends Converter
 
     public function __toString()
     {
+        if ($this->factor < 0) {
+            return '*('.$this->factor.')';
+        }
+
         return '*'.$this->factor;
     }
 }

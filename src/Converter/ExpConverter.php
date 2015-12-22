@@ -58,4 +58,9 @@ class ExpConverter extends Converter
     {
         return exp($this->logBase * $amount);
     }
+
+    public function __toString()
+    {
+        return 'exp';
+    }
 }

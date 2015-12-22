@@ -58,4 +58,9 @@ class LogConverter extends Converter
     {
         return log($amount) / $this->logBase;
     }
+
+    public function __toString()
+    {
+        return 'log';
+    }
 }
