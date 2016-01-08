@@ -20,7 +20,7 @@ abstract class Measure implements Measurable, Quantity
      * @param float $value
      * @param Unit  $unit
      *
-     * @return Measurable|Quantity
+     * @return Measurable|Quantity|mixed
      */
     public static function valueOf($value, Unit $unit)
     {
