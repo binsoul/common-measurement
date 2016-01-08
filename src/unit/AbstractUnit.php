@@ -113,8 +113,9 @@ abstract class AbstractUnit implements Unit
         if ($n > 0) {
             return CompoundBuilder::getRootInstance($this, $n);
         }
+
         if ($n == 0) {
-            throw new \InvalidArgumentException("Root's order is zero");
+            throw new \InvalidArgumentException('Expected root not equal to zero.');
         }
 
         return SystemOfUnits::ONE()->divide($this->root(-$n));
