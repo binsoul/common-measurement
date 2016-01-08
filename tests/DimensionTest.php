@@ -3,9 +3,6 @@
 namespace BinSoul\Test\Common\Measurement;
 
 use BinSoul\Common\Measurement\Dimension;
-use BinSoul\Common\Measurement\Quantity\Dimensionless;
-use BinSoul\Common\Measurement\SystemOfUnits\StandardUnits;
-use BinSoul\Common\Measurement\Unit\BaseUnit;
 
 class DimensionTest extends \PHPUnit_Framework_TestCase
 {

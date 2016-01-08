@@ -6,7 +6,6 @@ use BinSoul\Common\Measurement\Converter\AddConverter;
 use BinSoul\Common\Measurement\Converter\CompoundConverter;
 use BinSoul\Common\Measurement\Converter\IdentityConverter;
 use BinSoul\Common\Measurement\Converter\MultiplyConverter;
-use BinSoul\Common\Measurement\Measure;
 
 class MultiplyConverterTest extends \PHPUnit_Framework_TestCase
 {
@@ -39,9 +38,9 @@ class MultiplyConverterTest extends \PHPUnit_Framework_TestCase
         $converter = new MultiplyConverter(100);
 
         $newConverter = $converter->concat(new MultiplyConverter(100));
-        $this->assertEquals(100*100, $newConverter->getFactor());
+        $this->assertEquals(100 * 100, $newConverter->getFactor());
 
-        $newConverter = $converter->concat(new MultiplyConverter(1/100));
+        $newConverter = $converter->concat(new MultiplyConverter(1 / 100));
         $this->assertInstanceOf(IdentityConverter::class, $newConverter);
 
         $newConverter = $converter->concat(new AddConverter(5));
@@ -52,7 +51,7 @@ class MultiplyConverterTest extends \PHPUnit_Framework_TestCase
     {
         $converter = new MultiplyConverter(100);
         $newConverter = $converter->inverse();
-        $this->assertEquals(1/100, $newConverter->getFactor());
+        $this->assertEquals(1 / 100, $newConverter->getFactor());
     }
 
     public function test_can_convert_values()

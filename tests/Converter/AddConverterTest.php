@@ -6,7 +6,6 @@ use BinSoul\Common\Measurement\Converter\AddConverter;
 use BinSoul\Common\Measurement\Converter\CompoundConverter;
 use BinSoul\Common\Measurement\Converter\IdentityConverter;
 use BinSoul\Common\Measurement\Converter\MultiplyConverter;
-use BinSoul\Common\Measurement\Measure;
 
 class AddConverterTest extends \PHPUnit_Framework_TestCase
 {

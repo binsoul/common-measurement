@@ -5,7 +5,6 @@ namespace BinSoul\Test\Common\Measurement;
 use BinSoul\Common\Measurement\Converter\AddConverter;
 use BinSoul\Common\Measurement\Converter\CompoundConverter;
 use BinSoul\Common\Measurement\Converter\MultiplyConverter;
-use BinSoul\Common\Measurement\Measure;
 
 class CompoundConverterTest extends \PHPUnit_Framework_TestCase
 {
@@ -27,7 +26,7 @@ class CompoundConverterTest extends \PHPUnit_Framework_TestCase
         $converter = new CompoundConverter($converter1, $converter2);
         $newConverter = $converter->inverse();
 
-        $this->assertSame(1/2, $newConverter->getSecond()->getFactor());
+        $this->assertSame(1 / 2, $newConverter->getSecond()->getFactor());
         $this->assertSame(-3, $newConverter->getFirst()->getOffset());
     }
 

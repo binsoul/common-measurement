@@ -3,10 +3,8 @@
 namespace BinSoul\Test\Common\Measurement;
 
 use BinSoul\Common\Measurement\Converter\AddConverter;
-use BinSoul\Common\Measurement\Converter\CompoundConverter;
 use BinSoul\Common\Measurement\Converter\IdentityConverter;
 use BinSoul\Common\Measurement\Converter\MultiplyConverter;
-use BinSoul\Common\Measurement\Measure;
 
 class IdentityConverterTest extends \PHPUnit_Framework_TestCase
 {

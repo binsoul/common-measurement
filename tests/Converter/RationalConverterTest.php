@@ -6,7 +6,6 @@ use BinSoul\Common\Measurement\Converter\AddConverter;
 use BinSoul\Common\Measurement\Converter\CompoundConverter;
 use BinSoul\Common\Measurement\Converter\IdentityConverter;
 use BinSoul\Common\Measurement\Converter\RationalConverter;
-use BinSoul\Common\Measurement\Measure;
 
 class RationalConverterTest extends \PHPUnit_Framework_TestCase
 {
@@ -72,7 +71,7 @@ class RationalConverterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(100, $converter->convert(1));
 
         $converter = new RationalConverter(1, 100);
-        $this->assertEquals(1/100, $converter->convert(1));
+        $this->assertEquals(1 / 100, $converter->convert(1));
     }
 
     public function test_can_be_compared()
